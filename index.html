@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Savings Goals</title>
+    <meta name="description" content="A modern savings goals tracker with deadline forecasting, interactive savings calculator, deposit and withdrawal history, and visual analytics." />
+    <meta property="og:title" content="Savings Goals" />
+    <meta property="og:description" content="A modern savings goals tracker with deadline forecasting, interactive savings calculator, deposit and withdrawal history, and visual analytics." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('savings-theme');
+          var theme = 'system';
+          if (saved) {
+            try {
+              theme = JSON.parse(saved);
+            } catch (e) {
+              theme = saved;
+            }
+          }
+          var isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,6 @@
+{
+  "name": "Savings Goals",
+  "description": "A modern savings goals tracker with deadline forecasting, interactive savings calculator, deposit and withdrawal history, and visual analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
